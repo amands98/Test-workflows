@@ -1,7 +1,8 @@
 GITCOMMIT := $(shell git rev-parse --short=8 HEAD)
+GIT_VERSION=$(shell git describe --tags `git rev-list --tags --max-count=1`)
 PROJECT_PKG = github.com/goharbor/harbor-cli
 RELEASE_CHANNEL="edge"
-LDFLAGS = "-w -s -X $(PROJECT_PKG)/version.GitCommit=$(GITCOMMIT) -X $(PROJECT_PKG)/version.ReleaseChannel=$(RELEASE_CHANNEL)"
+LDFLAGS = "-w -s -X $(PROJECT_PKG)/version.GitCommit=$(GITCOMMIT) -X $(PROJECT_PKG)/constants.version=$(GIT_VERSION)"
 ARCH := amd64
 GO_EXE = go
 

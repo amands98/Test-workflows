@@ -26,6 +26,7 @@ archives:
     - goos: windows
       format: zip
 release:
+  name_template: "Habor {{.Tag}}"
   draft: true
   prerelease: auto
 
