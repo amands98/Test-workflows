@@ -25,8 +25,12 @@ archives:
   format_overrides:
     - goos: windows
       format: zip
+checksum:
+  name_template: 'checksums.txt'
+snapshot: 
+  name_template: "{{ .Tag }}-next"
 release:
-  name_template: "Habor {{.Tag}}"
+  name_template: "Harbor {{.Tag}}"
   draft: true
   prerelease: auto
 
