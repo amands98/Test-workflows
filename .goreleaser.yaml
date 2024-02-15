@@ -1,7 +1,7 @@
 project_name: harbor
 
 builds:
-- main: ./cmd/harbor
+- main: ./cmd/harbor/main.go
   binary: ./harbor
   env:
     - CGO_ENABLED=0
